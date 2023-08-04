@@ -3,9 +3,9 @@ import random
 from numpy.linalg import norm
 
 class Perceptron:
-    def __init__(self, perceptrons, learning_rate=0.01, threshold=0.9):
+    def __init__(self, perceptrons, p=0.01, threshold=0.9):
         """ Initializes the perceptron """
-        self.learning_rate = learning_rate  # Learning rate
+        self.p = p  # Learning rate
         self.threshold = threshold  # Threshold
 
         self.perceptrons = perceptrons  # List of perceptrons
@@ -47,7 +47,7 @@ class Perceptron:
         if disable:
             self.do = False
             return
-        if random.random() < self.learning_rate:
+        if random.random() < self.p:
             self.do = True
             self.action = random.random()
         else:
@@ -77,7 +77,7 @@ class Perceptron:
 
             # Decides whether to update weights
             if random.random() < 1.0 / np.exp(self.trace):
-                self.theta -= self.learning_rate * grad
+                self.theta -= 0.01 * grad
 
             self.loop_count = 0
             self.feedback_cache = self.feedback.copy()

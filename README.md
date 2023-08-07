@@ -22,7 +22,7 @@ For maintaining the cycle, we utilize cosine similarity to calculate the number 
 ## MNIST World
 In this environment, we have 10 keys, numbered from 0 to 9. The agent's output represents the key it presses. For example, if the agent presses 3, an image with a label of 3 is randomly selected from the MNIST dataset and passed to the agent as its input.
 
-Rather than being motivated by any particular rewards, the agent aims to establish a recurring cycle of actions and states. By pressing a key and receiving a corresponding image, the agent forms a causal loop, learning to map a specific output (key press) to an expected input (image). The goal here is to maintain a consistent and predictable pattern of behavior, striving to sustain the information loop within the MNIST world.
+Interestingly, while the initial hypothesis suggested that the search for an information loop would lead the agent to repetitively press the same key, the observed behavior contradicted this assumption. Instead of remaining stuck in a singular loop, the agent frequently leverages its inherent randomness combined with environmental data to break out of its previous patterns. 
 
 ## Inverted Pendulum
 In this environment, the challenge is to keep the pendulum standing upright. The agent's actions control the force applied to the base of the pendulum. Instead of using a traditional reward system (which would typically provide higher scores for keeping the pendulum upright), we use our novel perception algorithm.
